@@ -8,6 +8,7 @@ volumes:
 services:
     web:
         restart: always
+        image: latex-full
         build: .
         depends_on:
             mongo:
