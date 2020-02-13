@@ -15,3 +15,11 @@ ShareLatex with all packages include pythonhighlight. You can start it in amd64 
 4.Open in browser url from 3. to set password.
 
 5.Login with email and your pass.
+
+# How to compile .tex without start web server?
+
+In folder with .tex files you need execute (do not forget change main.tex to you filename):
+
+```
+docker run --rm -it --user="$(id -u):$(id -g)" --net=none --entrypoint=bash -v "$PWD":/source_files latex-full -c "cd /source_files && pdflatex main.tex && pdflatex main.tex"
+```
