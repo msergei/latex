@@ -21,5 +21,5 @@ ShareLatex with all packages include pythonhighlight. You can start it in amd64 
 In folder with .tex files you need execute (do not forget change main.tex to you filename):
 
 ```
-docker run --rm -it --user="$(id -u):$(id -g)" --net=none --entrypoint=bash -v "$PWD":/source_files cemulate/sharelatex-full:v1.2.1 -c "cd /source_files && pdflatex main.tex && pdflatex main.tex"
+docker run --rm -it --user="$(id -u):$(id -g)" --net=none --entrypoint=bash -v "$PWD":/source_files cemulate/sharelatex-full:v2.1.1 -c "cd /source_files && pdflatex -interaction=batchmode main.tex && pdflatex -interaction=batchmode main.tex"
 ```
